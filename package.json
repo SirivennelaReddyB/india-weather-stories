@@ -1,0 +1,31 @@
+{
+  "name": "india-weather-stories",
+  "version": "1.0.0",
+  "description": "A modern, minimal weather application that tells beautiful weather stories from across Indian cities",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "preview": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "weather",
+    "india",
+    "stories",
+    "climate",
+    "forecast",
+    "responsive",
+    "minimal",
+    "modern"
+  ],
+  "author": "India Weather Stories",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SirivennelaReddyB/india-weather-stories.git"
+  },
+  "homepage": "https://github.com/SirivennelaReddyB/india-weather-stories#readme",
+  "bugs": {
+    "url": "https://github.com/SirivennelaReddyB/india-weather-stories/issues"
+  }
+}
