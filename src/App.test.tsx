@@ -2,8 +2,20 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders Vibe Weather title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const titleElement = screen.getByText(/vibe weather/i);
+  expect(titleElement).toBeInTheDocument();
+});
+
+test('renders weather forecast subtitle', () => {
+  render(<App />);
+  const subtitleElement = screen.getByText(/5-day weather forecast for indian metro cities/i);
+  expect(subtitleElement).toBeInTheDocument();
+});
+
+test('shows loading state initially', () => {
+  render(<App />);
+  const loadingElement = screen.getByText(/loading weather data/i);
+  expect(loadingElement).toBeInTheDocument();
 });

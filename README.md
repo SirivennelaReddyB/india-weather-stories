@@ -1,4 +1,70 @@
-# Getting Started with Create React App
+# Vibe Weather
+
+A React application that displays 5-day weather forecasts for 6 Indian metro cities using the OpenWeatherMap API.
+
+## Features
+
+- **5-day weather forecast** for Delhi, Mumbai, Bangalore, Chennai, Kolkata, and Hyderabad
+- **Dynamic background colors** based on weather conditions:
+  - Blue for clear weather
+  - Gray for cloudy weather
+  - Dark blue for rain
+  - Golden for sunrise/sunset
+- **Responsive design** with TailwindCSS
+- **TypeScript** for type safety
+- **Deploy-ready** configuration
+
+## Setup
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Get a free API key from [OpenWeatherMap](https://openweathermap.org/api)
+
+4. Create a `.env` file in the root directory:
+   ```bash
+   cp .env.example .env
+   ```
+
+5. Add your OpenWeatherMap API key to the `.env` file:
+   ```
+   REACT_APP_OPENWEATHER_API_KEY=your_api_key_here
+   ```
+
+## Development
+
+Start the development server:
+```bash
+npm start
+```
+
+Build for production:
+```bash
+npm run build
+```
+
+Run tests:
+```bash
+npm test
+```
+
+## Deployment
+
+The app is ready for deployment to platforms like Vercel, Netlify, or any static hosting service. Make sure to set the `REACT_APP_OPENWEATHER_API_KEY` environment variable in your deployment platform.
+
+## Technologies Used
+
+- React 19 with TypeScript
+- TailwindCSS for styling
+- OpenWeatherMap API for weather data
+- Create React App for build tooling
+
+---
+
+## Original Create React App Documentation
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
