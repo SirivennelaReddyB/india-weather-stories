@@ -1,24 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { WeatherIntro } from './components/WeatherIntro';
+import { mockForecastData } from './data/mockForecast';
+import { testRainyData } from './data/testData';
 import './App.css';
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
+  const [useRainTest, setUseRainTest] = useState(false);
+
+  const handleIntroComplete = () => {
+    console.log('Weather intro completed!');
+    // You can add logic here to navigate to the main app or show other content
+  };
+
+  const handleRestart = () => {
+    setShowIntro(false);
+    setTimeout(() => setShowIntro(true), 100);
+  };
+
+  const toggleRainTest = () => {
+    setUseRainTest(!useRainTest);
+    setShowIntro(false);
+    setTimeout(() => setShowIntro(true), 100);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {showIntro ? (
+        <WeatherIntro 
+          forecastData={useRainTest ? testRainyData : mockForecastData} 
+          onComplete={handleIntroComplete}
+        />
+      ) : (
+        <div className="main-content">
+          <h1>Welcome to India Weather Stories</h1>
+          <div style={{ display: 'flex', gap: '20px', flexDirection: 'column' }}>
+            <button onClick={handleRestart} className="restart-button">
+              🌦️ View Weather Intro Again
+            </button>
+            <button onClick={toggleRainTest} className="restart-button">
+              {useRainTest ? '🌈 Switch to Full Story' : '🌧️ Test Rain Animation'}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

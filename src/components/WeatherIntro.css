@@ -1,0 +1,144 @@
+.weather-intro {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+.intro-header {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 15;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.intro-header h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.intro-header p {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.progress-container {
+  position: absolute;
+  top: 120px;
+  left: 20px;
+  right: 20px;
+  z-index: 15;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF6B35, #F7931E, #FFD23F);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.stage-indicators {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.stage-indicator {
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.stage-indicator.active {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.stages-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.intro-controls {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 15;
+}
+
+.control-button {
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.control-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.control-button:active {
+  transform: translateY(0);
+}
+
+.control-button.replay {
+  background: rgba(34, 139, 34, 0.3);
+}
+
+.control-button.play-pause {
+  background: rgba(255, 140, 0, 0.3);
+}
+
+.control-button.skip {
+  background: rgba(220, 20, 60, 0.3);
+}
+
+@media (max-width: 768px) {
+  .intro-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .stage-indicator {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+  
+  .control-button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+}
